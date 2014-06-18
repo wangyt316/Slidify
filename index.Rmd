@@ -1,0 +1,57 @@
+---
+title       : Coursera Project Presentation
+subtitle    : Interactive R
+author      : Yuting Wang
+job         : Data Scientist
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [boostrap,quiz, shiny, interactive]            # {mathjax, quiz, bootstrap, shiny, interactive}
+ext_widgets : {rCharts: [libraries/nvd3]}
+mode        : selfcontained # {standalone, draft}
+--- &radio
+
+## Interative Quiz
+Guess my name: 
+
+1. Yuxing
+2. _Yuting_
+3. Xuting
+4. Xuxing
+
+*** .hint
+Check the first slide
+
+--- 
+
+## Interactive Chart
+
+```{r echo=FALSE, results = 'asis'}
+require(rCharts)
+haireye <- as.data.frame(HairEyeColor)
+n1 <- nPlot(Freq ~ Hair, group = 'Eye', type = 'multiBarChart', data = subset(haireye, Sex = 'Male')
+            )
+n1$print('chart1')
+```
+
+
+---
+
+## Recommend a rose diagram
+
+in ggplot, if you have a bar graph, it is very easy to turn it into a rose diagram by adding: 
+```{r, results='hide',warning=FALSE,message=FALSE}
+coord_polar()
+```
+
+
+---
+## Recommend a database
+
+data.lacity.org
+
+--- 
+## Thank You
+
+Thank you all. 
+---
